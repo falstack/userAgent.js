@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>userAgent.js</title>
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        p {
+            padding: 0 20px;
+        }
+    </style>
+</head>
+<body>
+    <p id="UA"></p>
+</body>
+<script src="userAgent.min.js"></script>
+<script>
+
+    var userAgent = getUserAgent(window.navigator.userAgent);
+
+    console.log(userAgent);
+
+    document.getElementById('UA').innerHTML =
+            'browser：' + userAgent.browser.name + '（' + userAgent.browser.version + '） |  webview：' + userAgent.browser.webview +
+            '  |  OS：' + userAgent.os.name + '（' + userAgent.os.version + '）';
+</script>
+</html>
